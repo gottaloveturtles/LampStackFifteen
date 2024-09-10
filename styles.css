@@ -1,0 +1,400 @@
+body {
+    background-color: #c8d9eb;
+}
+
+
+
+#title {
+    position: relative;
+    font-size: 50px;
+    top: 50px;
+    left: 150px;
+    width: 50%;
+    margin: 0%;
+    text-align: right;
+    font-family: 'Ubuntu', sans-serif;
+    color: #063876;
+}
+/*Titles in box 2*/
+#secboxtitle {
+    position: relative;
+    font-size: 30px;
+    bottom: 20px;
+    left: 70px;
+    width: 50%;
+    margin: 0%;
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    color: #063876;
+}
+
+#secboxtitle2 {
+    position: relative;
+    font-size: 30px;
+    bottom: 90px;
+    left: 70px;
+    width: 50%;
+    margin: 0%;
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    color: #063876;
+}
+
+
+/*my log in button now*/
+
+#logoutButton {
+    position: relative;
+    top: 231px;
+    width: 60%;
+    height: 10%;
+    margin-right: 3%;
+    font-size: 10px;
+    border-radius: 25px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+    #logoutButton:hover {
+        background-color: #3981c1; /* Changes background color on hover */
+        color: #FFFFFF; /* Changes text color on hover */
+        opacity: 0.8;
+    }
+
+
+
+.input-box {
+    margin-bottom: 30px; /* Adds space between each input-box */
+}
+
+
+/*evans login text  */
+#loginpr {
+    position: relative;
+    top: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    width: 90%;
+    left: 40px;
+    text-align: center;
+    color: #063876;
+}
+/*evans input box 
+#input
+{
+    flex-wrap: wrap;
+    font-size: 30px;
+    width: 30%;
+    height: 30%;
+    margin-left: 450px;
+    margin-top: 125px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #3c94e7;
+}
+*/
+#input {
+    display: block; /* Default display mode; remove if using flexbox */
+    font-size: 30px;
+    width: 30%; /* Keep this if you want the box to be responsive */
+    height: auto; /* Let the height adjust based on content */
+    margin: 125px auto; /* Center the box horizontally */
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #3c94e7; /* Background color of the box */
+}
+
+#input-box {
+    font-size: 30px;
+    color: #090a0a;
+}
+
+
+
+
+
+
+
+
+/*my login button layout */
+
+.buttons {
+    position: relative;
+    left: 30px;
+    font-size: 20px;
+    border-radius: 25px;
+    width: 40%;
+    margin-left: 25%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+    .buttons:hover {
+        background-color: #3d3de84f;
+        color: #FFFFFF;
+        opacity: 50%;
+    }
+
+
+.buttons2 {
+    position: relative;
+    left: 30px;
+    top: 15px;
+    font-size: 20px;
+    border-radius: 25px;
+    width: 40%;
+    margin-left: 25%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+    .buttons2:hover {
+        background-color: #3d3de84f;
+        color: #FFFFFF;
+        opacity: 50%;
+    }
+
+/*Add contact button*/
+#addContactButton {
+    position: relative;
+    left: 30px;
+    top: 1px;
+    font-size: 20px;
+    border-radius: 25px;
+    width: 40%;
+    margin-left: 25%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#addContactButton {
+    background-color: #3d3de84f;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+
+
+
+
+
+#userbox {
+    position: absolute; /* Allows the box to be positioned anywhere on the screen */
+    top: 100px; /* Positions the box 10px from the top of the screen */
+    left: 80px; /* Positions the box 10px from the left side of the screen */
+    width: 16%; /* The width will still be 20% of the screen */
+    height: 30%;
+    padding: 20px; /* Adds padding inside the box */
+    background-color: #a4cdf4; /* Sets the background color of the box */
+    color: white; /* Sets the text color to white */
+    border-radius: 10px; /* Rounds the corners of the box */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow for a modern look */
+    text-align: center; /* Centers the text inside the box */
+}
+
+
+
+#nameBox {
+    display: block;
+    position: absolute;
+    top: 120px; /* Position near the top */
+    left: 50px; /* Position near the left */
+    width: 40%; /* Width of the box */
+    padding: 20px; /* Padding inside the box */
+    font-size: 9pt;
+    color: white; /* Text color */
+    text-align: center; /* Center-align text */
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #8ac9f3;
+    border-radius: 10px;
+}
+
+#nameBox2 {
+    display: block;
+    position: absolute;
+    top: 190px; /* Position near the top */
+    left: 50px; /* Position near the left */
+    width: 40%; /* Width of the box */
+    padding: 20px; /* Padding inside the box */
+    font-size: 9pt;
+    color: white; /* Text color */
+    text-align: center; /* Center-align text */
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #8ac9f3;
+    border-radius: 10px;
+}
+
+/* for contacts main box */
+
+#accessUIDiv {
+    font-size: 30px;
+    width: 60%;
+    margin-left: 31%;
+    margin-top: 5%;
+    height: 60%;
+    padding: 25px;
+    background-color: #85b1e7;
+}
+
+/*text input add contacts*/
+
+#nameadd {
+    font-size: 30px;
+    position: relative;
+    bottom: 70px;
+}
+
+#emailadd {
+    font-size: 30px;
+    position: relative;
+    bottom: 50px;
+}
+
+/**************Code below not yet updated***************/
+
+
+#user {
+    font-size: 30px;
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 200px;
+    padding: 25px;
+    background-color: #b2b2b2;
+}
+
+#pass {
+    font-size: 30px;
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 200px;
+    padding: 25px;
+    background-color: #b2b2b2;
+}
+
+
+
+
+
+
+
+
+#loginName {
+    font-size: 30px;
+}
+
+#loginPassword {
+    font-size: 30px;
+}
+
+#searchText {
+    font-size: 30px;
+}
+
+#colorText {
+    font-size: 30px;
+}
+
+input[type="text"], input[type="password"] {
+    border-radius: 25px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#inner-title {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+#loginResult {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+#userName {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+
+select {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 0.75em;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#colorSearchResult {
+    display: none;
+}
+
+
+#colorAddResult {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+/*evans image*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%; /* The container takes up 90% of the viewport width */
+    max-width: 1200px; /* Max width to prevent it from becoming too large */
+    margin: 0 auto; /* Centers the container */
+}
+
+#loginImage {
+    position: absolute; /* Allows precise positioning within the container */
+    top: 70px; /* Positions the image 5px from the top */
+    right: 450px; /* Positions the image 5px from the right edge */
+    width: 5%; /* Sets the width of the image to 50px */
+    height: auto; /* Ensures the height adjusts proportionally */
+}
+
+#loginImage2 {
+    position: absolute; /* Makes the image fixed relative to the screen */
+    top: 120px; /* Positions it near the top */
+    left: 160px; /* Positions it near the left edge */
+    width: 5%; /* Scales the image to 40% of the screen width */
+    height: auto; /* Keeps the aspect ratio */
+    border-radius: 30%; /* Makes the image have round edges */
+    overflow: hidden; /* Ensures no part of the image exceeds the round edges */
+}
+
+/*my lines */
+#myHr {
+    position: relative;
+    bottom: 90px;
+    border: none;
+    height: 2px;
+    background-color: #1850a4; /* Original color */
+    border-radius: 60px; /* Makes the line curved */
+    width: 95%;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+    #myHr:hover {
+        background-color: #5f93f2; /* Lighter color on hover */
+    }
