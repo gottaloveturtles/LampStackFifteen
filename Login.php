@@ -1,6 +1,5 @@
 
 <?php
-
     $inData = getRequestInfo();
 
     $id = 0;
@@ -11,7 +10,7 @@
     if( $conn->connect_error ) {
 		returnWithError( $conn->connect_error );
 	} else {
-        $stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM users WHERE Login=? AND Password =?");
+        $stmt = $conn->prepare("SELECT ID,FirstName,LastName FROM users WHERE Login=? AND Password=?");
         $stmt->bind_param("ss", $inData["login"], $inData["password"]);
         $stmt->execute();
         $result = $stmt->get_result();
