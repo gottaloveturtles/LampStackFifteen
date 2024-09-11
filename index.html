@@ -35,22 +35,35 @@
             <i class='bx bx-lock-alt'></i>
         </div>
 
+
         <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
-        <button type="button" id="createacc" class="buttons2" onclick="createAccount();"> Create account </button>
+        <button type="button" id="createacc" class="buttons2" onclick="create();"> Create account </button>
+		
 
+		<div id="popup" >
+			<h5>Create Account </h5>
+			<img src="images/create.png" id="createimage" />
+			<input type="text" id="newname" placeholder="Username" />
+			<input type="text" id="newpassword" placeholder="Set Password" />
+			<input type="email" id="email" placeholder="Enter email" />
+			<input type="tel" id="phone " placeholder=" Enter Phone number " />
+
+
+            <button onclick="hidePopup()" type="button">Finish</button></div>
+   
+	
     </div>
-
-
-
-
-
 
     <span id="inner-title">PLEASE LOG IN</span>
 
 
     <span id="loginResult"></span>
 
+<script>
+	
 
+
+</script>
 </body>
 
 </html>
