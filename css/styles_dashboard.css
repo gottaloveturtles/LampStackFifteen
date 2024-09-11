@@ -1,0 +1,245 @@
+* {
+    font-family: 'Arial Unicode MS', sans-serif;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+#viewport {
+    display: flex;
+}
+
+/*
+
+    TOP TAB
+
+*/
+
+#toptab {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #edeff0;
+    color: #1a1d26;
+    border-bottom: 2px solid #dedede;
+}
+
+#logo {
+    padding-left: 25px;
+    padding-right: 13px;
+    width: 25px;
+    margin-bottom: -2px;
+}
+
+#toptab input {
+    margin-left: 40px;
+    padding-left: 10px;
+    width: 300px;
+    border: 2px solid #dedede;
+    border-radius: 20px;
+    font-style: italic;
+}
+
+/*
+
+    SIDE TAB
+
+*/
+
+#sidetab {
+    display: block;
+    background-color: #273c4f;
+    width: 250px;
+    height: 100vh;
+}
+
+/*
+    UPPER CONTENT
+*/
+
+#stprofile {
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+#stprofile i {
+    margin-top: 30px;
+    border: 1px solid white;
+    background-color: white;
+    color: #0056cd;
+    border-radius: 25px;
+    font-size: 50px;
+}
+
+#stprofile p {
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #213342;
+    font-size: 20px;
+}
+
+#uppercontent {
+    color: white;
+}
+
+#uppercontent i {
+    margin-left: 18px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+}
+
+#uppercontent p {
+    text-align: left;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 17px;
+    vertical-align: middle;
+    transition: 0.5s;
+}
+
+#uppercontent p:hover {
+    background-color: #304659;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.activetab {
+    background-color: #304659;
+    border-bottom: 2px solid #213342;
+}
+
+/*
+    LOWER CONTENT
+*/
+#lowercontent {
+    border-top: 2px solid #213342;
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+    color: white;
+}
+
+#lowercontent i {
+    margin-left: 18px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+}
+
+#lowercontent p {
+    text-align: left;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 17px;
+    vertical-align: middle;
+    transition: 0.5s;
+}
+
+#lowercontent p:hover {
+    background-color: #304659;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/*
+
+    CONTACTS TAB
+
+*/
+
+#contactstab {
+    display: block;
+    background-color: #edeff0;
+    width: 375px;
+    height: 100vh;
+    border-right: 2px solid #dedede;
+}
+
+/*
+    CTHEADER
+*/
+
+#ctheader {
+    display: inline-block;
+    background-color: white;
+    border-bottom: 2px solid #dedede;
+    width: 100%;
+}
+
+#ctheader p {
+    display: inline-block;
+    padding: 26px 80px 26px 30px;
+    font-size: 21px;
+}
+
+#ctheader p i {
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
+#ctheader button {
+    display: inline-block;
+    color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: 0;
+    background-color: #0056cd;
+    cursor: pointer;
+    margin-right: 6px;
+    vertical-align: middle;
+    transition-duration: 0.5s;
+}
+
+#ctheader button:hover {
+    color: #0056cd;
+    border: 3px solid #0056cd;
+    background-color: white;
+    transition-duration: 0.5s;
+}
+
+/*
+    CONTACTS LIST
+*/
+
+#contactslist {
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.examplecontact {
+    display: block;
+    border-bottom: 1px solid #dedede;
+    padding: 12px 0px 12px 30px;
+    font-size: 16px;
+    color: #273c4f;
+    transition-duration: 0.5s;
+}
+
+.examplecontact p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.examplecontact i {
+    vertical-align: middle;
+}
+
+.examplecontact:hover {
+    background-color: white;
+    transition-duration: 0.5s;
+}
+
+.examplecontact p:hover {
+    color: #0056cd;
+    text-decoration: underline;
+    cursor: pointer;
+}
