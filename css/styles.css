@@ -97,9 +97,9 @@ body {
     width: 30%; /* Keep this if you want the box to be responsive */
     height: auto; /* Let the height adjust based on content */
     margin: 125px auto; /* Center the box horizontally */
-    padding: 25px;
+    padding: 60px 25px 60px 25px;
     border-radius: 15px;
-    background-color: #3c94e7; /* Background color of the box */
+    background-color: #29485c; /* Background color of the box */
 }
 
 #input-box {
@@ -364,9 +364,9 @@ select {
 }
 
 #loginImage {
-    position: absolute; /* Allows precise positioning within the container */
-    top: 40px; /* Positions the image 5px from the top */
-    right: 675px; /* Positions the image 5px from the right edge */
+    position: relative;
+    top: 50px; /* Positions the image 5px from the top */
+    left: 10px; /* Positions the image 5px from the right edge */
     width: 5%; /* Sets the width of the image to 50px */
     height: auto; /* Ensures the height adjusts proportionally */
 }
