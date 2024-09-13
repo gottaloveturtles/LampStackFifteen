@@ -17,7 +17,7 @@
 	else
 	{
         // If we successfully connect, bind the parameters appropriately
-		$stmt = $conn->prepare("UPDATE Contacts SET Name=?, Email=?, Phone=? where ID = ?");
+		$stmt = $conn->prepare("UPDATE contacts SET Name=?, Email=?, Phone=? where ID = ?");
 		$stmt->bind_param("ssss", $contactName, $email, $phoneNum, $contactId);
 		
 		if ($stmt->execute())
