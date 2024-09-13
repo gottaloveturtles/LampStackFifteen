@@ -1,5 +1,6 @@
 body {
     background-color: #c8d9eb;
+    background-image:url('/Users/evansbakire/Downloads/lampstack/images/background1.jpg');
 }
 
 
@@ -8,11 +9,27 @@ body {
     position: relative;
     font-size: 50px;
     top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    right:30px;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
     color: #063876;
+}
+
+.usericon{
+    position: relative;
+    left: 50px;
+    text-align: left;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.createicon{
+    position: relative;
+    right: 30px;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+ 
 }
 /*Titles in box 2*/
 #secboxtitle {
@@ -70,24 +87,32 @@ body {
 /*evans login text  */
 #loginpr {
     position: relative;
-    top: 50px;
+    bottom: 30px;
+
     font-family: 'Ubuntu', sans-serif;
-    font-size: 40px;
-    margin-left: auto;
+    font-size: 30px;
+    margin-right: 10px;
     margin-right: auto;
     text-align: center;
-    color: #063876;
+    color: #f1eded;
 }
 /*evans input box */
 
 #input {
-    display: block; /* Default display mode; remove if using flexbox */
-    font-size: 30px;
-    width: 30%; /* Keep this if you want the box to be responsive */
-    height: auto; /* Let the height adjust based on content */
-    margin: 125px auto; /* Center the box horizontally */
+    display: block; 
+    font-size: 20px;
+    width: 28%; /* Keep this if you want the box to be responsive */
+    height: 50%; /* Let the height adjust based on content */
+  
+
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+
+
     padding: 60px 25px 60px 25px;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: #29485c; /* Background color of the box */
 }
 
@@ -249,7 +274,7 @@ body {
 
     font-family: 'Ubuntu', sans-serif;
     position: relative;
-    left:160px;
+    left:140px;
     width: 40%;              
     padding: 15px;  
     text-align: center;          
@@ -257,19 +282,22 @@ body {
    font-size: 15px;
    color: #090a0a;
    display: block;
+   border: 2px solid #063876;
 }
+
 
 
 #popup{
 
+
 display: none;
 
-width: 500px;
-height: 470px;
+width: 450px;
+height: 500px;
 background: #29485c; 
-border-radius: 6px;
+border-radius: 1px;
 position: absolute;
-top: 47%;
+top: 50%;
  left: 50%;
  transform: translate(-50%,-50%) scale(1);
  text-align: center;
@@ -280,16 +308,29 @@ top: 47%;
 
 h5{
  position: relative;
- bottom: 40px;
+ top:10px;
+ font-family: 'Ubuntu', sans-serif;
 }
 
 
 
 #popup input[type="email"], input[type="tel"] {
 
-    border-radius: 25px;       
-   
+    border-radius: 1px;       
+    position: relative;
+
+    
+
 }
+input[type="text"], input[type="password"] {
+    border-radius: 1px;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 
 #popup button {
     position: relative;
@@ -308,6 +349,10 @@ h5{
 
 
 
+
+  
+
+    
 
 /**************Code below not yet updated***************/
 
@@ -337,11 +382,11 @@ h5{
 
 
 #loginName {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #loginPassword {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #searchText {
@@ -352,14 +397,7 @@ h5{
     font-size: 30px;
 }
 
-input[type="text"], input[type="password"] {
-    border-radius: 25px;
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-}
+
 
 #inner-title {
     display: inline-block;
@@ -407,10 +445,11 @@ input[type="text"], input[type="password"] {
 
 #loginImage {
     position: relative;
-    top: 50px; /* Positions the image 5px from the top */
-    left: 10px; /* Positions the image 5px from the right edge */
-    width: 5%; /* Sets the width of the image to 50px */
-    height: auto; /* Ensures the height adjusts proportionally */
+    transform: translateY(-50%);
+    left: 164px; /* Positions the image 5px from the right edge */
+    width: 75px; /* Sets the width of the image to 50px */
+    border-radius: 5px; 
+    height: 85px; /* Ensures the height adjusts proportionally */
 }
 
 #loginImage2 {
@@ -441,3 +480,36 @@ input[type="text"], input[type="password"] {
         background-color: #5f93f2; /* Lighter color on hover */
     }
 
+
+
+
+    #lowercontent {
+        border-top: 2px solid #213342;
+        position: absolute;
+        left: 100px;
+        width: 250px;
+        bottom: 10;
+        color: white;
+    }
+    
+    
+    #lowercontent p {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 13px;
+        font-size: 17px;
+        vertical-align: middle;
+        transition: 0.5s;
+    }
+    
+    #lowercontent p:hover {
+        background-color: #516074;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+
+
+    /* Testttt*/
+
+   

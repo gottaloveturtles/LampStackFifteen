@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>COP 4331 LAMP Stack Demo</title>
+    <title>Small Project Group Fifteen</title>
 
     <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="js/code.js"></script>
@@ -16,36 +16,48 @@
 
 <body>
 
-    <h1 id="title">Contact Manager<img src="img/logo.png" id="loginImage" /></h1>
+     <h1 id="title">Contact Manager</h1>
 
-
-    <div id="loginpr">
-        Login
-    </div>
+ 
+  
 
     <div id="input">
+		<img src="/Users/evansbakire/Downloads/lampstack/images/logo.png" id="loginImage" />
+		<div id="loginpr">
 
+ 
+		
+		  	Login 
+		</div>
+
+	  <p class ="usericon"> Username <span style = "color:red">*</span></p>
         <div class="input-box">
             <input type="text" id="loginName" placeholder="Username" />
             <i class='bx bx-user'></i>
         </div>
-
+		<p class ="usericon"> Password <span style = "color:red">*</span></p>
         <div class="input-box">
             <input type="password" id="loginPassword" placeholder="Password" />
             <i class='bx bx-lock-alt'></i>
         </div>
+		<div id="lowercontent">
+		<p id = "loginButton" onclick="doLogin();"> Login</p>
+		<p id = "createacc" onclick="create();"> Register</p>
+		</div>
+        
 
-
-        <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
-        <button type="button" id="createacc" class="buttons2" onclick="create();"> Create account </button>
-		
+	
 
 		<div id="popup" >
-			<h5>Create Account </h5>
-			<img src="images/create.png" id="createimage" />
+			<h5 >Create Account </h5>
+
+			<p class ="createicon"> Username <span style = "color:red">*</span></p>
 			<input type="text" id="newname" placeholder="Username" />
+			<p class ="createicon"> Password <span style = "color:red">*</span></p>
 			<input type="text" id="newpassword" placeholder="Set Password" />
+			<p class ="createicon"> email <span style = "color:red">*</span></p>
 			<input type="email" id="email" placeholder="Enter email" />
+			<p class ="createicon"> phone <span style = "color:red">*</span></p>
 			<input type="tel" id="phone " placeholder=" Enter Phone number " />
 
 
@@ -54,16 +66,21 @@
 	
     </div>
 
-    <span id="inner-title">PLEASE LOG IN</span>
 
 
-    <span id="loginResult"></span>
-
-<script>
-	
 
 
-</script>
+
+   <!--  <span id="inner-title">PLEASE LOG IN</span>
+	<span id="loginResult"></span>-->
+
+   
+
+	<script> 
+       
+    </script> 
+
+
 </body>
 
 </html>
