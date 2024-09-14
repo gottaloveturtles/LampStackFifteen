@@ -35,7 +35,7 @@
 
             <div id="lowercontent">
                 <p><i class="material-icons">settings</i> Settings</p>
-                <p><i class="material-icons">exit_to_app</i> Logout</p>
+                 <p id = "logout" onclick="logout()"><i class="material-icons">exit_to_app</i> Logout</p>
             </div>
         </div>
 
@@ -114,5 +114,13 @@
         </div>
     </div>
 </body>
+
+    <script>
+	document.getElementById("logout").addEventListener("click", function() {
+		window.location.href = "index.html";
+	// You can add more functionality here for Settings
+});
+
+</script>
 
 </html>
