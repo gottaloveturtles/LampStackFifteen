@@ -11,6 +11,10 @@ body {
     display: flex;
 }
 
+.blur {
+    filter: blur(2px);
+}
+
 /*
 
     TOP TAB
@@ -155,7 +159,7 @@ body {
 #contactstab {
     display: block;
     background-color: #edeff0;
-    width: 22%;
+    width: 22vw; /* Changeable */
     height: 100vh;
     border-right: 2px solid #dedede;
 }
@@ -242,4 +246,45 @@ body {
     color: #0056cd;
     text-decoration: underline;
     cursor: pointer;
+}
+
+/*
+
+    FLEXVIEW
+
+*/
+
+#flexview {
+
+}
+
+/*
+
+    ADD POPUP
+
+*/
+
+#addPopup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#addPopup .addPopupContent {
+    width: 400px;
+    height: 250px;
+    background-color: #edeff0;
+    color: #1a1d26;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 1;
+    bottom: 125%;
+    margin: 10% auto;
 }
