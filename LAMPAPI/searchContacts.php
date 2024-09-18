@@ -13,9 +13,9 @@
 	else
 	{
         // If we successfully connect, bind the parameters appropriately
-		$stmt = $conn->prepare("select Name, Email, Phone, ID from contacts where ( (Name like ? OR Email like ? OR Phone like ?) ) and UserID=?");
+		$stmt = $conn->prepare("select FirstName, LastName, Email, Phone, ID from contacts where ( (FirstName like ? OR LastName like ? OR Email like ? OR Phone like ?) ) and UserID=?");
         $search = "%" . $inData["search"] . "%";
-		$stmt->bind_param("ssss", $search, $search, $search, $inData["userId"]);
+		$stmt->bind_param("sssss", $search, $search, $search, $search, $inData["userId"]);
 		$stmt->execute();
 
         $result = $stmt->get_result();
@@ -27,7 +27,7 @@
                 $searchResults .= ",";
             }
             $searchCount++;
-            $searchResults .= '{"contactName" : "' . $row["Name"] . '", "phoneNum" : "' . $row["Phone"] . '", "email" : "' . $row["Email"] . '", "id" : "' . $row["ID"] . '"}';
+            $searchResults .= '{"firstName" : "' . $row["FirstName"] . '", "lastName" : "' . $row["LastName"] . '", "phoneNum" : "' . $row["Phone"] . '", "email" : "' . $row["Email"] . '", "id" : "' . $row["ID"] . '"}';
         }
 
         if ($searchCount == 0)
