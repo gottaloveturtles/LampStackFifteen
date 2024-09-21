@@ -11,13 +11,16 @@
     if( $conn->connect_error ) {
         returnWithError( $conn->connect_error );
     } else {
-        // Deletes the row that matches the input firstName/lastName
-        $stmt = $conn->prepare("DELETE FROM contacts WHERE firstName=? AND lastName=?");
+        // Deletes the row that matches the input ID
+        $stmt = $conn->prepare("DELETE FROM contacts WHERE ID=?");
+        
         if($stmt) {
-            $stmt->bind_param("ss", $inData["firstName"], $inData["lastName"]);
+
+            $stmt->bind_param("s", $inData["ID"]); 
+
             $stmt->execute();
 
-            // Checks if any row was affect. If yes, return a success message. If no, return error message
+            // Checks if any row was affected. If yes, return a success message. If no, return error message
             if ($stmt->affected_rows > 0) {
                 $retValue = '{"success": true, "return": "Deletion successful"}';
                 sendResultInfoAsJson( $retValue );
@@ -47,7 +50,7 @@
 
     // Function formats a JSON string with an error string
     function returnWithError( $err ) {
-		$retValue = '{"firstName":"", "lastName":"", "phone": 0, "email":"", "userId": 0, error":"' . $err . '"}';
+        $retValue = '{"ID":"", error":"' . $err . '"}';	
 		sendResultInfoAsJson( $retValue );
 	}
 ?>
