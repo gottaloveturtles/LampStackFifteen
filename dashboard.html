@@ -19,7 +19,9 @@
 <body>
     <div id="toptab">
         <p><img src="img/logo.png" id="logo" />Contacts Manager</p>
-        <input type="search" placeholder="Search. . ." />
+        <input type="search" id="searchCONTACT" placeholder="Search. . ." />
+        <h1 id="colorSearchResult"></h1>
+        <p id ="contactlist"></p>
     </div>
 
     <div id="addPopup">
@@ -36,7 +38,7 @@
             <input type="tel" placeholder="Enter phone number" />
 
             <button onclick="hideAddPopup();">Cancel</button>
-            <button id="createContactBtn">Create</button>
+           <button id="createContactBtn" onclick="createcontact()">Create</button>
         </div>
     </div>
 
