@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -6,7 +7,7 @@
 
     <title>Dashboard</title>
 
-    <script type="text/javascript" src="js/contacts.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
 
     <link rel="stylesheet" href="css/styles_dashboard.css" />
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -77,9 +78,9 @@
             </div>
 
             <div id="contactslist">
-                <div class="examplecontact">
+                <!--<div class="examplecontact">
                     <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
+                    <p onclick="setActiveContact()">Firstname Lastname</p>
                 </div>
                 <div class="examplecontact">
                     <i class="material-icons">person</i>
@@ -137,20 +138,24 @@
                     <i class="material-icons">person</i>
                     <p>Firstname Lastname</p>
                 </div>
+                -->
             </div>
         </div>
 
         <div id="flexview">
-
+            <div id="fvph">
+                <p>Click on a contact to view or create one below</p>
+                <button onclick="showAddPopup()"><i class="material-icons">person_add</i> Create Contact</button>
+            </div>
         </div>
     </div>
 
 </body>
 
-<script>
+<!--<script>
     document.getElementById("logout").addEventListener("click", funtion() {
         window.location.href = "index.html";
     });
-</script>
+</script>--->
 
 </html>

@@ -22,6 +22,11 @@ function hideAddPopup() {
     toggleBlur();
 }
 
+function hideFVPH() {
+	var popup = document.getElementById("fvph");
+	popup.style.display = "none";
+}
+
 function createContact() {
     let contactName = document.getElementById("iname").value;
     let email = document.getElementById("iemail").value;

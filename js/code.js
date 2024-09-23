@@ -199,6 +199,11 @@ function hideAddPopup() {
   toggleBlur();
 }
 
+function hideFVPH() {
+    var popup = document.getElementById("fvph");
+    popup.style.display = "none";
+}
+
 function createcontact() {
   let contactfname = document.getElementById("contactfname").value;
   let contactlname = document.getElementById("contactlname").value;
@@ -359,4 +364,32 @@ function updateContact() {
   };
 
   xhr.send(jsonPayload);
+}
+
+function loadContacts() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", urlBase + "/fetchContacts.php", true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    let payload = {
+        iduser: iduser,
+    };
+
+    let jsonPayload = JSON.stringify(payload);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("contactslist").innerHTML = xhr.responseText;
+        }
+    };
+
+    xhr.send(jsonPayload);
+}
+
+window.onload = function () {
+    if (window.location.pathname.endsWith('dashboard.html')) {
+        readCookie();
+        console.log("User ID: " + iduser);
+        loadContacts();
+    }
 }
