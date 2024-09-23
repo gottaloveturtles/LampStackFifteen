@@ -3,9 +3,10 @@
 	
     // Attributes of each contact
 	$userId = $inData["userId"];
-	$contactName = $inData["contactName"];
+	$firstName = $inData["firstName"];
+    	$lastName = $inData["lastName"];
 	$email = $inData["email"];
-    $phoneNum = $inData["phoneNum"];
+    	$phoneNum = $inData["phoneNum"];
 
     // Establish connection
 	$conn = new mysqli("localhost", "root", "83EuRJ+A1MJW", "contactManager");
@@ -16,8 +17,8 @@
 	else
 	{
         // If we successfully connect, bind the parameters appropriately
-		$stmt = $conn->prepare("INSERT into contacts (UserId, Name, Email, Phone) VALUES(?, ?, ?, ?)");
-		$stmt->bind_param("ssss", $userId, $contactName, $email, $phoneNum);
+		$stmt = $conn->prepare("INSERT into contacts (UserId, FirstName, LastName, Email, Phone) VALUES(?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssss", $userId, $firstName, $lastName, $email, $phoneNum);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();

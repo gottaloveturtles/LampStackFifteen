@@ -2,14 +2,15 @@
 	$inData = getRequestInfo();
 	
     // Attributes of each contact
-    $contactId = $inData["contactId"];
+    	$contactId = $inData["contactId"];
 	$userId = $inData["userId"];
-	$contactName = $inData["contactName"];
+	$firstName = $inData["firstName"];
+    	$lastName = $inData["lastName"];
 	$email = $inData["email"];
-    $phoneNum = $inData["phoneNum"];
+    	$phoneNum = $inData["phoneNum"];
 
     // Establish connection
-    $conn = new mysqli("localhost", "root", "83EuRJ+A1MJW", "contactManager");
+    	$conn = new mysqli("localhost", "root", "83EuRJ+A1MJW", "contactManager");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -17,8 +18,8 @@
 	else
 	{
         // If we successfully connect, bind the parameters appropriately
-		$stmt = $conn->prepare("UPDATE contacts SET Name=?, Email=?, Phone=? where ID = ?");
-		$stmt->bind_param("ssss", $contactName, $email, $phoneNum, $contactId);
+		$stmt = $conn->prepare("UPDATE contacts SET FirstName=?, LastName=?, Email=?, Phone=? where ID = ?");
+		$stmt->bind_param("sssss", $firstName, $lastName, $email, $phoneNum, $contactId);
 		
 		if ($stmt->execute())
 		{

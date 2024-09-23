@@ -1,86 +1,49 @@
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Small Project Group Fifteen</title>
-
-    <script type="text/javascript" src="js/md5.js"></script>
-    <script type="text/javascript" src="js/code.js"></script>
-
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-</head>
-
-<body>
-
-     <h1 id="title">Contact Manager</h1>
-
-
-
-
-    <div id="input">
-                <img src="/Users/evansbakire/Downloads/lampstack/images/logo.png" id="loginImage" />
-                <div id="loginpr">
-
-
-
-                        Login
-                </div>
-
-          <p class ="usericon"> Username <span style = "color:red">*</span></p>
-        <div class="input-box">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Small Project Group Fifteennn</title>
+      <script type="text/javascript" src="js/md5.js"></script>
+      <script type="text/javascript" src="js/code.js"></script>
+      <link href="css/styles.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+   <body>
+      <h1 id="title">Contact Manager</h1>
+      <div id="input">
+         <img src="/Users/evansbakire/Downloads/lampstack/images/logo.png" id="loginImage" />
+         <div id="loginpr">
+            Login
+         </div>
+         <p class ="usericon"> Username <span style = "color:red">*</span></p>
+         <div class="input-box">
             <input type="text" id="loginName" placeholder="Username" />
             <i class='bx bx-user'></i>
-        </div>
-                <p class ="usericon"> Password <span style = "color:red">*</span></p>
-        <div class="input-box">
+         </div>
+         <p class ="usericon"> Password <span style = "color:red">*</span></p>
+         <div class="input-box">
             <input type="password" id="loginPassword" placeholder="Password" />
             <i class='bx bx-lock-alt'></i>
-        </div>
-                <div id="lowercontent">
-                <p id = "loginButton" onclick="doLogin();"> Login</p>
-                <p id = "createacc" onclick="create();"> Register</p>
-                </div>
-
-
-
-
-                <div id="popup" >
-                        <h5 >Create Account </h5>
-
-        <p class ="createicon"> FirstName <span style = "color:red">*</span></p>
-                                <input type="text" id="firstname" placeholder="Username" />
-                                <p class ="createicon"> LastName<span style = "color:red">*</span></p>
-                                <input type="text" id="lastname" placeholder="Set Password" />
-                                <p class ="createicon"> login <span style = "color:red">*</span></p>
-                                <input type="text" id="login" placeholder="Enter Login" />
-                                <p class ="createicon"> password <span style = "color:red">*</span></p>
-                                <input type="text" id="password" placeholder=" Enter password " />
-
-            <button onclick="hidePopup()" type="button">Finish</button></div>
-
-
-    </div>
-
-
-
-
-
-
-     <span id="inner-title">PLEASE LOG IN</span>
-        <span id="loginResult"></span>
-
-
-
-        <script>
-
-    </script>
-
-
-</body>
-
+         </div>
+         <div id="lowercontent">
+            <p id = "loginButton" onclick="doLogin();"> Login</p>
+            <p id = "createacc" onclick="create();"> Register</p>
+         </div>
+         <div id="popup" >
+            <h5 >Create Account </h5>
+            <p class ="createicon"> FirstName <span style = "color:red">*</span></p>
+            <input type="text" id="firstname" placeholder="Username" />
+            <p class ="createicon"> LastName<span style = "color:red">*</span></p>
+            <input type="text" id="lastname" placeholder="Set Password" />
+            <p class ="createicon"> login <span style = "color:red">*</span></p>
+            <input type="text" id="login" placeholder="Enter Login" />
+            <p class ="createicon"> password <span style = "color:red">*</span></p>
+            <input type="text" id="password" placeholder=" Enter password " />
+            <button onclick="hidePopup()" type="button">Finish</button>
+         </div>
+      </div>
+      <span id="inner-title">PLEASE LOG IN</span>
+      <span id="loginResult"></span>
+      <script></script>
+   </body>
 </html>
-
