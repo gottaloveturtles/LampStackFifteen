@@ -6,10 +6,33 @@ let iduser = 0;
 let fname = "";
 let lname = "";
 
+
 /*
 function doLogin()
 {       window.location.href = "dashboard.html";}
 */
+let counter = 0;
+
+// Simulate login success and redirect with loader
+function login() {
+  if (counter == 1) {
+    // Show the loader
+    document.getElementById('bouncing-dots').style.display = 'flex'; // Ensure bouncing dots are displayed
+    document.getElementById('loader-container').style.display = 'flex'; // Ensure loader container is displayed
+	document.getElementById("firstnamelogin").innerHTML = fname;
+    // Simulate loading time, then redirect
+    setTimeout(function() {
+      window.location.href = "dashboard.html"; // Redirect to the main page
+    }, 3000); // 3-second delay (or any duration you prefer)
+  } else {
+    // Handle login failure (e.g., show error message)
+    alert('Login failed. Please try again.');
+  }
+}
+
+
+
+
 
 function doLogin() {
   iduser = 0;
@@ -38,20 +61,22 @@ function doLogin() {
         if (iduser < 1) {
           document.getElementById("loginResult").innerHTML =
             "Incorrect username or password";
+			counter=0;
           return;
         }
-
+ counter = 1;
         fname = jsonObject.firstName;
         lname = jsonObject.lastName;
-
+        
         saveCookie();
-        window.location.href = "dashboard.html";
+       
       }
     };
     xhr.send(jsonPayload);
   } catch (err) {
     document.getElementById("loginResult").innerHTML = err.message;
   }
+  login();
 }
 
 function logout() {
