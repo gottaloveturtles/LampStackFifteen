@@ -14,12 +14,12 @@ function doLogin()
 let counter = 0;
 
 // Simulate login success and redirect with loader
-function login() {
+function handlelogin() {
   if (counter == 1) {
     // Show the loader
     document.getElementById('bouncing-dots').style.display = 'flex'; // Ensure bouncing dots are displayed
     document.getElementById('loader-container').style.display = 'flex'; // Ensure loader container is displayed
-	document.getElementById("firstnamelogin").innerHTML = fname;
+	//document.getElementById("firstnamelogin").innerHTML = fname;
     // Simulate loading time, then redirect
     setTimeout(function() {
       window.location.href = "dashboard.html"; // Redirect to the main page
@@ -67,7 +67,7 @@ function doLogin() {
  counter = 1;
         fname = jsonObject.firstName;
         lname = jsonObject.lastName;
-        
+          handlelogin();
         saveCookie();
        
       }
@@ -76,7 +76,7 @@ function doLogin() {
   } catch (err) {
     document.getElementById("loginResult").innerHTML = err.message;
   }
-  login();
+
 }
 
 function logout() {
