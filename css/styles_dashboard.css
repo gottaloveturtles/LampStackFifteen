@@ -269,16 +269,16 @@ body {
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
 }
 
 #addPopup .addPopupContent {
-    width: 400px;
-    height: 250px;
+    width: 30vw;
+    height: 25vh;
     background-color: #edeff0;
     color: #1a1d26;
     text-align: center;
@@ -286,5 +286,7 @@ body {
     padding: 8px 0;
     z-index: 1;
     bottom: 125%;
-    margin: 10% auto;
+    margin-top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
 }
