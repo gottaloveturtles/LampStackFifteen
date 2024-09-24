@@ -34,10 +34,10 @@
             Connect inputs to database when the
             create button is clicked
             -->
-            <input id="ifname" type="text" placeholder="Enter contact's first name" />
-            <input id="ilname" type="text" placeholder="Enter contact's last name" />
-            <input id="iemail" type="email" placeholder="Enter email" />
-            <input id="itel" type="tel" placeholder="Enter phone number" />
+            <input id="contactfname" type="text" placeholder="Enter contact's first name" />
+            <input id="contactlname" type="text" placeholder="Enter contact's last name" />
+            <input id="contactemail" type="email" placeholder="Enter email" />
+            <input id="contactphone" type="tel" placeholder="Enter phone number" />
 
             <button onclick="hideAddPopup();">Cancel</button>
            <button id="createContactBtn" onclick="createcontact()">Create</button>
@@ -62,7 +62,7 @@
             </div>
 
             <div id="lowercontent">
-                <p><i class="material-icons">settings</i> Settings</p>
+                <p><i class="material-icons">settings</i> Settings (coming soon)</p>
                 <p id="logout" onclick="logout()"><i class="material-icons">exit_to_app</i> Logout</p>
             </div>
         </div>
@@ -78,74 +78,13 @@
             </div>
 
             <div id="contactslist">
-                <!--<div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p onclick="setActiveContact()">Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                <div class="examplecontact">
-                    <i class="material-icons">person</i>
-                    <p>Firstname Lastname</p>
-                </div>
-                -->
             </div>
         </div>
 
         <div id="flexview">
             <div id="fvph">
                 <p>Click on a contact to view or create one below</p>
-                <button onclick="showAddPopup()"><i class="material-icons">person_add</i> Create Contact</button>
+                <button onclick="showAddPopup()"><i class="material-icons">person_add</i> Create contact</button>
             </div>
         </div>
     </div>

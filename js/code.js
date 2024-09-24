@@ -193,6 +193,11 @@ function showAddPopup() {
 }
 
 function hideAddPopup() {
+    document.getElementById("contactfname").value = "";
+    document.getElementById("contactlname").value = "";
+    document.getElementById("contactphone").value = "";
+    document.getElementById("contactemail").value = "";
+    
   var popup = document.getElementById("addPopup");
   popup.style.display = "none";
 
@@ -209,17 +214,17 @@ function createcontact() {
   let contactlname = document.getElementById("contactlname").value;
   let contactphone = document.getElementById("contactphone").value;
   let contactemail = document.getElementById("contactemail").value;
-  document.getElementById("Createaccresult").innerHTML = "";
+  //document.getElementById("Createaccresult").innerHTML = "";
   let tmp = {
-    contactfname: contactfname,
-    contactlname: contactlname,
-    contactphone: contactphone,
-    contactemail: contactemail,
-    iduser: iduser,
+    firstName: contactfname,
+    lastName: contactlname,
+    phoneNum: contactphone,
+    email: contactemail,
+    userId: iduser,
   };
   let jsonPayload = JSON.stringify(tmp);
 
-  let url = urlBase + "/CreateAccount." + extension;
+  let url = urlBase + "/createContact." + extension;
   let xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   try {
@@ -227,25 +232,15 @@ function createcontact() {
       if (this.readyState == 4 && this.status == 200) {
         let jsonObject = JSON.parse(xhr.responseText);
 
-        if (jsonObject.error) {
-          document.getElementById("Createaccresult").innerHTML =
-            "Unable to create account";
-          return;
-        }
-
-        document.getElementById("Createaccresult").innerHTML =
-          "Account Created Succsessfully, Please Login ";
-
-        //      newname = jsonObject.newname;
-        //      newpassword = jsonObject.newpassword;
-
-        //saveCookie();
       }
     };
     xhr.send(jsonPayload);
   } catch (err) {
     document.getElementById("Createaccresult").innerHTML = err.message;
-  }
+    }
+
+    hideAddPopup();
+    loadContacts();
 }
 
 function deleteContact() {
@@ -386,10 +381,32 @@ function loadContacts() {
     xhr.send(jsonPayload);
 }
 
+function loadContactDetails(contactId) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", urlBase + "/fetchContactInfo.php", true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    let payload = {
+        contactId: contactId,
+    }
+
+    let jsonPayload = JSON.stringify(payload);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("flexview").innerHTML = xhr.responseText;
+        }
+    };
+
+    xhr.send(jsonPayload);
+
+    hideFVPH();
+}
+
 window.onload = function () {
     if (window.location.pathname.endsWith('dashboard.html')) {
         readCookie();
-        console.log("User ID: " + iduser);
+        //console.log("User ID: " + iduser); //DEBUG
         loadContacts();
     }
 }
