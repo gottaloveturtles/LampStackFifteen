@@ -399,8 +399,6 @@ function loadContactDetails(contactId) {
     };
 
     xhr.send(jsonPayload);
-
-    hideFVPH();
 }
 
 window.onload = function () {

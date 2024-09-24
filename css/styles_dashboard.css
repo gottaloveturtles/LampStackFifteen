@@ -309,6 +309,49 @@ body {
     vertical-align: middle;
 }
 
+.contact-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-details {
+    margin-bottom: 10px;
+}
+
+    .contact-details p {
+        margin: 5px 0;
+    }
+
+.contact-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .contact-buttons button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+        .contact-buttons button.delete-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .contact-buttons button.update-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
 /*
 
     ADD POPUP

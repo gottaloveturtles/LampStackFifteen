@@ -18,14 +18,17 @@
 	if($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
 
-		echo "<div class='contact-details'>
-                <i class='material-icons'>person</i>
-                <div class='contact-info'>
+		echo "<div class='contact-box'>
+                <div class='contact-details'>
                     <p><strong>First Name:</strong> " . htmlspecialchars($row['FirstName']) . "</p>
                     <p><strong>Last Name:</strong> " . htmlspecialchars($row['LastName']) . "</p>
                     <p><strong>Email:</strong> " . htmlspecialchars($row['Email']) . "</p>
                     <p><strong>Phone:</strong> " . htmlspecialchars($row['Phone']) . "</p>
                 </div>
+				<div class='contact-buttons'>
+					<button class='delete-btn' onclick='deleteContact(" . $ID . ")'>Delete</button>
+					<button class='update-btn' onclick='updateContact(" . $ID . ")'>Update</button>
+				</div>
               </div>";
 	} else {
 		echo "<p>Contact not found.</p>";
