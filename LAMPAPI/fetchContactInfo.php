@@ -19,15 +19,20 @@
 		$row = $result->fetch_assoc();
 
 		echo "<div class='contact-box'>
-                <div class='contact-details'>
-                    <p><strong>First Name:</strong> " . htmlspecialchars($row['FirstName']) . "</p>
-                    <p><strong>Last Name:</strong> " . htmlspecialchars($row['LastName']) . "</p>
-                    <p><strong>Email:</strong> " . htmlspecialchars($row['Email']) . "</p>
-                    <p><strong>Phone:</strong> " . htmlspecialchars($row['Phone']) . "</p>
-                </div>
+				<div class='contact-content'>
+					<div class='contact-photo'>
+						<i class='material-icons'>person</i>
+					</div>
+					<div class='contact-details'>
+						<p><strong>First Name:</strong> " . htmlspecialchars($row['FirstName']) . "</p>
+						<p><strong>Last Name:</strong> " . htmlspecialchars($row['LastName']) . "</p>
+						<p><strong>Email:</strong> " . htmlspecialchars($row['Email']) . "</p>
+						<p><strong>Phone:</strong> " . htmlspecialchars($row['Phone']) . "</p>
+					</div>
+				</div>
 				<div class='contact-buttons'>
-					<button class='delete-btn' onclick='deleteContact(" . $ID . ")'>Delete</button>
 					<button class='update-btn' onclick='updateContact(" . $ID . ")'>Update</button>
+					<button class='delete-btn' onclick='deleteContact(" . $ID . ")'>Delete</button>
 				</div>
               </div>";
 	} else {
