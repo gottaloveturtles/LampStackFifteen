@@ -18,20 +18,27 @@
     if ( $conn->connect_error ){
         returnWithError( $conn->connect_error );
     } else {
-
+        if( empty($login) || empty($password)){
+            returnWithError("Login and password cannot be blank.");
+            $conn->close();
+            return;
+        }
         // Retrieves the input firstName/lastName/login/password and inserts them into the users table in the database
         $stmt = $conn->prepare("INSERT into users (firstName,lastName,login,password) VALUES(?,?,?,?)");
         $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 
-        $stmt->execute();
-        // Closes prepared statment
-        $stmt->close();
+        if($stmt->execute()) {
+            // Closes prepared statment
+            $stmt->close();
 
-        // Closes database connection
-        $conn->close();
-        
-        // Return an empty error, indicating that the connection was successful
-        returnWithError("");
+            // Closes database connection
+            $conn->close();
+            
+            // Return an empty error, indicating that the connection was successful
+            returnWithError("");
+        } else {
+            returnWithError("Error inserting user: " . $stmt->error);
+        }
     }
 
     // Decodes the recieved JSON data
