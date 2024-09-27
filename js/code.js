@@ -320,15 +320,14 @@ function searchcontactlist() {
 
 function updateContact() {
   // Collect updated values from input fields (e.g., first name, last name, etc.)
-  let firstName = document.getElementById("firstName").value;
-  let lastName = document.getElementById("lastName").value;
-  let email = document.getElementById("email").value;
-  let phoneNum = document.getElementById("phoneNum").value;
-  document.getElementById("updateresult").innerHTML = "";
+  let firstName = document.getElementById("ucontactfname").value;
+  let lastName = document.getElementById("ucontactlname").value;
+  let email = document.getElementById("ucontactemail").value;
+  let phoneNum = document.getElementById("ucontactphone").value;
 
   // Create a payload with the updated contact info and the contactId
   let payload = {
-    contactId: contactId, // This comes from the button click or from the contact list
+    contactId: document.getElementById("ucontactid").getAttribute('data-value'), // This comes from the button click or from the contact list
     firstName: firstName,
     lastName: lastName,
     email: email,
@@ -348,17 +347,13 @@ function updateContact() {
   xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       let jsonObject = JSON.parse(xhr.responseText);
-      if (jsonObject.error) {
-        document.getElementById("updateresult").innerHTML =
-          "Error: " + jsonObject.error;
-      } else {
-        document.getElementById("updateresult").innerHTML =
-          "Contact updated successfully!";
-      }
     }
   };
 
-  xhr.send(jsonPayload);
+    xhr.send(jsonPayload);
+
+    hideUpdatePopup();
+    loadContactDetails(document.getElementById("ucontactid").getAttribute('data-value'));
 }
 
 function loadContacts() {
@@ -399,6 +394,31 @@ function loadContactDetails(contactId) {
     };
 
     xhr.send(jsonPayload);
+}
+
+function showUpdatePopup(contactId) {
+    var popup = document.getElementById("updatePopup");
+    popup.style.display = "block";
+
+    document.getElementById("ucontactfname").value = document.getElementById("acontactfirstname").getAttribute('data-value');
+    document.getElementById("ucontactlname").value = document.getElementById("acontactlastname").getAttribute('data-value');
+    document.getElementById("ucontactphone").value = document.getElementById("acontactphone").getAttribute('data-value');
+    document.getElementById("ucontactemail").value = document.getElementById("acontactemail").getAttribute('data-value');
+    document.getElementById("ucontactid").setAttribute('data-value', contactId);
+
+    toggleBlur();
+}
+
+function hideUpdatePopup() {
+    document.getElementById("ucontactfname").value = "";
+    document.getElementById("ucontactlname").value = "";
+    document.getElementById("ucontactphone").value = "";
+    document.getElementById("ucontactemail").value = "";
+
+    var popup = document.getElementById("updatePopup");
+    popup.style.display = "none";
+
+    toggleBlur();
 }
 
 window.onload = function () {

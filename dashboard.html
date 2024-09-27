@@ -22,7 +22,7 @@
         <p><img src="img/logo.png" id="logo" />Contacts Manager</p>
         <input type="search" id="searchCONTACT" placeholder="Search. . ." />
         <h1 id="contactfindresult"></h1>
-        <p id ="contactlist"></p>
+        <p id="contactlist"></p>
     </div>
 
     <div id="addPopup">
@@ -40,7 +40,31 @@
             <input id="contactphone" type="tel" placeholder="Enter phone number" />
 
             <button onclick="hideAddPopup();">Cancel</button>
-           <button id="createContactBtn" onclick="createcontact()">Create</button>
+            <button id="createContactBtn" onclick="createcontact()">Create</button>
+        </div>
+    </div>
+
+    <div id="updatePopup">
+        <div class="updatePopupContent">
+            <p id="ucontactid" data-value="">Update Contact</p>
+
+            <!--
+            API
+            
+            -->
+            <input id="ucontactfname" type="text" placeholder="Enter contact's first name" />
+            <input id="ucontactlname" type="text" placeholder="Enter contact's last name" />
+            <input id="ucontactemail" type="email" placeholder="Enter email" />
+            <input id="ucontactphone" type="tel" placeholder="Enter phone number" />
+
+            <button onclick="hideUpdatePopup();">Cancel</button>
+            <button id="updateContactBtn" onclick="updateContact()">Update</button>
+        </div>
+    </div>
+
+    <div id="deletePopup">
+        <div class="deletePopupContent">
+
         </div>
     </div>
 
@@ -49,10 +73,10 @@
             <div id="stprofile">
                 <i class="material-icons">person</i>
                 <!--
-                API 
-                replace username with logged in user's name    
+                API
+                replace username with logged in user's name
                 -->
-                  <p id="firstnamelogin"></p>
+                <p id="firstnamelogin"></p>
             </div>
 
             <div id="uppercontent">

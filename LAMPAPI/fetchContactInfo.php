@@ -24,14 +24,14 @@
 						<i class='material-icons'>person</i>
 					</div>
 					<div class='contact-details'>
-						<p><strong>First Name:</strong> " . htmlspecialchars($row['FirstName']) . "</p>
-						<p><strong>Last Name:</strong> " . htmlspecialchars($row['LastName']) . "</p>
-						<p><strong>Email:</strong> " . htmlspecialchars($row['Email']) . "</p>
-						<p><strong>Phone:</strong> " . htmlspecialchars($row['Phone']) . "</p>
+						<p id='acontactfirstname' data-value=" . htmlspecialchars($row['FirstName']) . "><strong>First Name:</strong> " . htmlspecialchars($row['FirstName']) . "</p>
+						<p id='acontactlastname' data-value=" . htmlspecialchars($row['LastName']) . "><strong>Last Name:</strong> " . htmlspecialchars($row['LastName']) . "</p>
+						<p id='acontactemail' data-value=" . htmlspecialchars($row['Email']) . "><strong>Email:</strong> " . htmlspecialchars($row['Email']) . "</p>
+						<p id='acontactphone'  data-value=" . htmlspecialchars($row['Phone']) . "><strong>Phone:</strong> " . htmlspecialchars($row['Phone']) . "</p>
 					</div>
 				</div>
 				<div class='contact-buttons'>
-					<button class='update-btn' onclick='updateContact(" . $ID . ")'>Update</button>
+					<button class='update-btn' onclick='showUpdatePopup(" . $ID . ")'>Update</button>
 					<button class='delete-btn' onclick='deleteContact(" . $ID . ")'>Delete</button>
 				</div>
               </div>";
