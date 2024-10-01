@@ -39,8 +39,11 @@
             <input id="contactemail" type="email" placeholder="Enter email" />
             <input id="contactphone" type="tel" placeholder="Enter phone number" />
 
-            <button onclick="hideAddPopup();">Cancel</button>
-            <button id="createContactBtn" onclick="createcontact()">Create</button>
+           <div id="createct">
+    <button id="createcontactpop" onclick="hideAddPopup();">Cancel</button>
+
+    <button id="createContactBtn" onclick="createcontact()">Create</button>
+</div>
         </div>
     </div>
 
@@ -69,7 +72,7 @@
     <div id="deletePopup">
         <div class="deletePopupContent">
             <p id="dcontactid" data-value="">Please confirm this action</p>
-            <button onclick="hideDeletePopup();">Cancel</button>
+           <button id="deletecancelbt" onclick="hideDeletePopup();">Cancel</button>
             <button id="deleteContactBtn" onclick="deleteContact()">Confirm</button>
         </div>
     </div>
