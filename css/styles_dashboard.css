@@ -431,6 +431,115 @@ body {
     margin-right: auto;
 }
 
+input#contactfname {
+    font-family: 'UBUNTU';
+    font-size: 14.5px;
+    padding: 2px;
+    margin: 3px 0;
+    border-radius: 4px;
+    border: 1px solid #cccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96), box-shadow 0.3s ease-in-out;
+}
+
+input#contactfname:focus {
+border-color:#063876;
+box-shadow: 0 0 5px rgba(6,56,118,0.5);
+outline:none;
+
+}
+
+input#contactlname {
+    font-family: 'Ubuntu';
+    font-size: 14.5px;
+    padding: 2px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96), box-shadow 0.3s ease-in-out;
+}
+
+
+input#contactlname:focus { 
+border-color:#063876;
+box-shadow: 0 0 5px rgba(6,56,118,0.5);
+outline:none;
+
+}
+
+input#contactemail {
+    font-family: 'Ubuntu';
+    font-size: 14.5px;
+    padding: 2px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96), box-shadow 0.3s ease-in-out;
+}
+
+input#contactemail:focus { 
+border-color:#063876;
+box-shadow: 0 0 5px rgba(6,56,118,0.5);
+outline:none;
+
+}
+
+
+input#contactphone {
+    font-family: 'Ubuntu';
+    font-size: 14.5px;
+    padding: 2px;
+    margin: 3px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96), box-shadow 0.3s ease-in-out;
+}
+
+input#contactphone:focus { 
+border-color:#063876;
+box-shadow: 0 0 5px rgba(6,56,118,0.5);
+outline:none;
+
+}
+p {
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button#createcontactpop {
+
+background-color: red;
+    color: white;
+    transition: 0.35s;
+    border: 3px solid #edeff0;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 90px;
+}
+
+
+
+button#createContactBtn {
+
+background-color: #3498db;
+    color: white;
+    transition: 0.35s;
+    border: 3px solid #edeff0;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 90px;
+
+}
+
 /*
 
     UPDATE POPUP
@@ -572,4 +681,39 @@ button#updateContactBtn {
     margin-top: 25vh;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+
+
+button#deletecancelbt {
+    background-color: red;
+    color: white;
+    transition: 0.35s;
+    border: 3px solid #edeff0;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 90px;
+}
+
+
+button#deleteContactBtn {
+    background-color: #3498db;
+    color: white;
+    transition: 0.35s;
+    border: 3px solid #edeff0;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 90px;
+}
+
+p#dcontactid {
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
