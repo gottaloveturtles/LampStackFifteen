@@ -348,7 +348,9 @@ function updateContact() {
     loadContactDetails(document.getElementById("ucontactid").getAttribute('data-value'));
 }
 
-function loadContacts() {
+async function loadContacts() {
+    await delay(500);
+
     var xhr = new XMLHttpRequest();
     xhr.open("POST", urlBase + "/fetchContacts.php", true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -367,6 +369,8 @@ function loadContacts() {
 
     xhr.send(jsonPayload);
 }
+
+setTimeout(loadContacts, 500);
 
 function loadContactDetails(contactId) {
     var xhr = new XMLHttpRequest();
@@ -427,6 +431,10 @@ function hideDeletePopup() {
     popup.style.display = "none";
 
     toggleBlur();
+}
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 window.onload = function () {
