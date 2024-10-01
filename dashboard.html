@@ -64,7 +64,9 @@
 
     <div id="deletePopup">
         <div class="deletePopupContent">
-
+            <p id="dcontactid" data-value="">Please confirm this action</p>
+            <button onclick="hideDeletePopup();">Cancel</button>
+            <button id="deleteContactBtn" onclick="deleteContact()">Confirm</button>
         </div>
     </div>
 
@@ -86,7 +88,7 @@
             </div>
 
             <div id="lowercontent">
-                <p><i class="material-icons">settings</i> Settings (coming soon)</p>
+                <!--<p><i class="material-icons">settings</i> Settings (coming soon)</p>-->
                 <p id="logout" onclick="logout()"><i class="material-icons">exit_to_app</i> Logout</p>
             </div>
         </div>

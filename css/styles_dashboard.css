@@ -464,3 +464,35 @@ body {
     margin-right: auto;
 }
 
+/*
+
+    DELETE POPUP
+
+*/
+
+#deletePopup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#deletePopup .deletePopupContent {
+    width: 20vw;
+    height: 10vh;
+    background-color: #edeff0;
+    color: #1a1d26;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 1;
+    bottom: 125%;
+    margin-top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+}

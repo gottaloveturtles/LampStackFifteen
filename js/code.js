@@ -244,40 +244,31 @@ function createcontact() {
 }
 
 function deleteContact() {
-  let contactfname = document.getElementById("contactfname").value;
-  let contactlname = document.getElementById("contactlname").value;
+    // Create a payload with the updated contact info and the contactId
+    let payload = {
+        ID: document.getElementById("dcontactid").getAttribute('data-value'), // This comes from the button click or from the contact list
+    };
 
-  document.getElementById("Deleteresult").innerHTML = "";
+    let url = urlBase + "/DeleteContacts." + extension;
 
-  let tmp = { contactfname: contactfname, contactlname: contactlname };
-  let jsonPayload = JSON.stringify(tmp);
+    // Send the updated data to the PHP server
+    let jsonPayload = JSON.stringify(payload);
 
-  let url = urlBase + "/DeleteContacts." + extension;
+    let xhr = new XMLHttpRequest();
 
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-  try {
     xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        let jsonObject = JSON.parse(xhr.responseText);
-
-        if (jsonObject.error) {
-          document.getElementById("Deleteresult").innerHTML =
-            "Unable to delete contact: " + jsonObject.error;
-          return;
+        if (this.readyState == 4 && this.status == 200) {
+            //let jsonObject = JSON.parse(xhr.responseText);
         }
-
-        document.getElementById("Deleteresult").innerHTML =
-          "Contact deleted successfully.";
-      }
     };
 
     xhr.send(jsonPayload);
-  } catch (err) {
-    document.getElementById("Deleteresult").innerHTML = err.message;
-  }
+
+    hideDeletePopup();
+    loadContacts();
 }
 
 function searchcontactlist() {
@@ -353,6 +344,7 @@ function updateContact() {
     xhr.send(jsonPayload);
 
     hideUpdatePopup();
+    loadContacts();
     loadContactDetails(document.getElementById("ucontactid").getAttribute('data-value'));
 }
 
@@ -416,6 +408,22 @@ function hideUpdatePopup() {
     document.getElementById("ucontactemail").value = "";
 
     var popup = document.getElementById("updatePopup");
+    popup.style.display = "none";
+
+    toggleBlur();
+}
+
+function showDeletePopup(contactId) {
+    var popup = document.getElementById("deletePopup");
+    popup.style.display = "block";
+
+    document.getElementById("dcontactid").setAttribute('data-value', contactId);
+
+    toggleBlur();
+}
+
+function hideDeletePopup() {
+    var popup = document.getElementById("deletePopup");
     popup.style.display = "none";
 
     toggleBlur();

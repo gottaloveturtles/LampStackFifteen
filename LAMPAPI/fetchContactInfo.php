@@ -32,7 +32,7 @@
 				</div>
 				<div class='contact-buttons'>
 					<button class='update-btn' onclick='showUpdatePopup(" . $ID . ")'>Update</button>
-					<button class='delete-btn' onclick='deleteContact(" . $ID . ")'>Delete</button>
+					<button class='delete-btn' onclick='showDeletePopup(" . $ID . ")'>Delete</button>
 				</div>
               </div>";
 	} else {
