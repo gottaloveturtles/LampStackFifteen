@@ -36,7 +36,10 @@
 				</div>
               </div>";
 	} else {
-		echo "<p>Contact not found.</p>";
+		echo "<div id='fvph'>
+                <p>Click on a contact to view or create one below</p>
+                <button onclick='showAddPopup()'><i class='material-icons'>person_add</i> Create contact</button>
+            </div>";
 	}
 
 	$stmt->close();

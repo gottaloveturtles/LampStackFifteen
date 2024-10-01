@@ -269,44 +269,30 @@ function deleteContact() {
 
     hideDeletePopup();
     loadContacts();
+    loadContactDetails(document.getElementById("dcontactid").getAttribute('data-value'));
 }
 
 function searchcontactlist() {
-  let find = document.getElementById("searchCONTACT").value;
-  document.getElementById("contactfindresult").innerHTML = "";
+    let find = document.getElementById("searchCONTACT").value.trim();
+    let tmp = { search: find, userId: iduser };
+    let jsonPayload = JSON.stringify(tmp);
 
-  let contactlist = "";
+    let url = urlBase + "/searchContacts." + extension;
 
-  let tmp = { find: find, iduser: iduser };
-  let jsonPayload = JSON.stringify(tmp);
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-  let url = urlBase + "/searchContacts." + extension;
-
-  let xhr = new XMLHttpRequest();
-
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  try {
-    xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("contactfindresult").innerHTML =
-          "Color(s) has been retrieved";
-
-        let jsonObject = JSON.parse(xhr.responseText);
-        for (let i = 0; i < jsonObject.results.length; i++) {
-          contactlist += jsonObject.results[i];
-          if (i < jsonObject.results.length - 1) {
-            contactlist += "<br />\r\n";
-          }
-        }
-
-        document.getElementsByTagName("p")[0].innerHTML = contactlist;
-      }
-    };
-    xhr.send(jsonPayload);
-  } catch (err) {
-    document.getElementById("contactfindresult").innerHTML = err.message;
-  }
+    try {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("contactslist").innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send(jsonPayload);
+    } catch (err) {
+        document.getElementById("contactslist").innerHTML = "Error retrieving contacts.";
+    }
 }
 
 function updateContact() {
@@ -349,7 +335,7 @@ function updateContact() {
 }
 
 async function loadContacts() {
-    await delay(500);
+    await delay(400);
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", urlBase + "/fetchContacts.php", true);
@@ -370,9 +356,8 @@ async function loadContacts() {
     xhr.send(jsonPayload);
 }
 
-setTimeout(loadContacts, 500);
-
-function loadContactDetails(contactId) {
+async function loadContactDetails(contactId) {
+    await delay(400);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", urlBase + "/fetchContactInfo.php", true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -442,5 +427,7 @@ window.onload = function () {
         readCookie();
         //console.log("User ID: " + iduser); //DEBUG
         loadContacts();
+
+        document.getElementById("searchCONTACT").addEventListener("input", searchcontactlist);
     }
 }

@@ -1,68 +1,65 @@
 <?php
-	$inData = getRequestInfo();
-	
-	$searchResults = "";
-	$searchCount = 0;
+	ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    $inData = getRequestInfo();
+    $searchCount = 0;
+    $searchResults = '';
 
     // Establish connection
-	$conn = new mysqli("localhost", "root", "83EuRJ+A1MJW", "contactManager");
-	if ($conn->connect_error) 
-	{
-		returnWithError( $conn->connect_error );
-	} 
-	else
-	{
-        // If we successfully connect, bind the parameters appropriately
-		$stmt = $conn->prepare("select FirstName, LastName, Email, Phone, ID from contacts where ( (FirstName like ? OR LastName like ? OR Email like ? OR Phone like ?) ) and UserID=?");
-        $search = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sssss", $search, $search, $search, $search, $inData["userId"]);
-		$stmt->execute();
+    $conn = new mysqli("localhost", "root", "83EuRJ+A1MJW", "contactManager");
+    if ($conn->connect_error) {
+        returnWithError($conn->connect_error);
+        exit();
+    }
 
-        $result = $stmt->get_result();
+    // Trim and sanitize search input
+    $search = "%" . trim($conn->real_escape_string($inData["search"])) . "%";
 
-        while($row = $result->fetch_assoc())
-        {
-            if($searchCount > 0)
-            {
-                $searchResults .= ",";
-            }
-            $searchCount++;
-            $searchResults .= '{"firstName" : "' . $row["FirstName"] . '", "lastName" : "' . $row["LastName"] . '", "phoneNum" : "' . $row["Phone"] . '", "email" : "' . $row["Email"] . '", "id" : "' . $row["ID"] . '"}';
-        }
+    $stmt = $conn->prepare("SELECT FirstName, LastName, Email, Phone, ID FROM contacts 
+                            WHERE (CONCAT_WS(' ', FirstName, LastName) LIKE ? 
+                                   OR FirstName LIKE ? 
+                                   OR LastName LIKE ? 
+                                   OR Email LIKE ? 
+                                   OR Phone LIKE ?)
+                            AND UserID=?");
 
-        if ($searchCount == 0)
-        {
-            returnWithError("No Contact Found");
-        }
-        else
-        {
-            returnWithInfo($searchResults);
-        }
+    $stmt->bind_param("ssssss", $search, $search, $search, $search, $search, $inData["userId"]);
+    $stmt->execute();
 
-		$stmt->close();
-		$conn->close();
-	}
+    $result = $stmt->get_result();
 
-	function getRequestInfo()
-	{
-		return json_decode(file_get_contents('php://input'), true);
-	}
+    while ($row = $result->fetch_assoc()) {
+        $contactId = $row["ID"];
+        $firstName = htmlspecialchars($row["FirstName"]);
+        $lastName = htmlspecialchars($row["LastName"]);
+        $email = htmlspecialchars($row["Email"]);
+        $phone = htmlspecialchars($row["Phone"]);
 
-	function sendResultInfoAsJson( $obj )
-	{
-		header('Content-type: application/json');
-		echo $obj;
-	}
-	
-	function returnWithError( $err )
-	{
-		$retValue = '{"id":0,"contactName":"","error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
-	}
-	
-    function returnWithInfo( $searchResults )
-	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
-		sendResultInfoAsJson( $retValue );
-	}
+        $searchResults .= '
+        <div class="examplecontact" data-contact-id="' . $contactId . '" onclick="loadContactDetails(' . $contactId . ')">
+            <i class="material-icons">person</i>
+            <p>' . $firstName . ' ' . $lastName . '</p>
+        </div>';
+        
+        $searchCount++;
+    }
+
+    if ($searchCount == 0) {
+        $searchResults = '<p>No contacts found</p>';
+    }
+
+    echo $searchResults;
+
+    $stmt->close();
+    $conn->close();
+
+    function getRequestInfo() {
+        return json_decode(file_get_contents('php://input'), true);
+    }
+
+    function returnWithError($err) {
+        echo '<p>Error: ' . $err . '</p>';
+    }
 ?>
